@@ -6,6 +6,8 @@
     "@deck.gl/core": "^8.5.8",
     "@deck.gl/layers": "^8.5.8",
     "@deck.gl/react": "^8.5.8",
+    "@loaders.gl/core": "^3.0.12",
+    "@loaders.gl/shapefile": "^3.0.12",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
