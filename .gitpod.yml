@@ -1,2 +1,2 @@
 tasks:
-  - init: npm install && npm run build && npm install -g create-react-app eslint
+  - init: npm install -g create-react-app eslint
