@@ -1,16 +1,12 @@
 /// app.js
 import React from 'react';
 import DeckGL from '@deck.gl/react';
-import {LineLayer} from '@deck.gl/layers';
+import {GeoJsonLayer} from '@deck.gl/layers';
 import {StaticMap} from 'react-map-gl';
-import {ShapefileLoader} from '@loaders.gl/shapefile';
-import {load} from '@loaders.gl/core';
+import perimetroRetrofitData from './data/perimetros_retrofit.json'
 
 // Set your mapbox access token here
 const MAPBOX_ACCESS_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-console.log(MAPBOX_ACCESS_TOKEN);
-console.log(process.env);
-
 
 
 // Viewport settings
@@ -24,24 +20,24 @@ const INITIAL_VIEW_STATE = {
 
 
 function App({data}) {
-  const layers = [
-    new LineLayer({id: 'line-layer', data})
-  ];
-
-  const layer = new Tile3DLayer({
-    id: 'tile-3d-layer',
-    // Tileset entry point: Indexed 3D layer file url
-    data: './data/perimetro.shp',
-    loader: ShapefileLoader,
-    onTilesetLoad: this._onTilesetLoad.bind(this)
+  const perimetroRetrofit = new GeoJsonLayer({
+    id: 'geojson-layer',
+    data: perimetroRetrofitData,
+    pickable: true,
+    stroked: true,
+    filled: false,
+    getLineColor: [255, 0, 0],
+    getPointRadius: 100,
+    getLineWidth: 1,
+    lineWidthScale: 1,
+    lineWidthUnits: 'pixels',
   });
-
   
   return (
     <DeckGL
       initialViewState={INITIAL_VIEW_STATE}
       controller={true}
-      layers={layers}
+      layers={[perimetroRetrofit]}
     >
       <StaticMap mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN} />
     </DeckGL>
