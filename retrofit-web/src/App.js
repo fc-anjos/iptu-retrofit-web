@@ -1,13 +1,10 @@
-import Map from './components/Map'
+import MainMap from './components/MainMap';
 
 function App() {
   return (
-    <Map>
-
-
-
-
-    </Map>
+    <>
+      <MainMap></MainMap>
+    </>
   );
 }
 
