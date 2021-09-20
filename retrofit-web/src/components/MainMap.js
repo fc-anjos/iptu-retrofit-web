@@ -47,13 +47,15 @@ function MainMap() {
   });
 
   return (
-    <DeckGL
-      initialViewState={INITIAL_VIEW_STATE}
-      controller={true}
-      layers={[perimetroRetrofit, edificacoes]}
-    >
-      <StaticMap mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN} />
-    </DeckGL>
+    <div style={{ height: '50vh', width: '50vw', position: 'relative' }} >
+      <DeckGL
+        initialViewState={INITIAL_VIEW_STATE}
+        controller={true}
+        layers={[perimetroRetrofit, edificacoes]}
+      >
+        <StaticMap mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN} />
+      </DeckGL>
+    </div>
   );
 }
 
