@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'MuseoSlab';
+    font-weight: 500;
+    src: local('MuseoSlab'), url(./fonts/MUSEO_SLAB.OTF) format('opentype');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +16,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1, h2 {
+    font-family: MuseoSlab, Arial, serif;
+    font-weight: black;
 }

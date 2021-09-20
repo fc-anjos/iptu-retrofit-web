@@ -47,7 +47,7 @@ function MainMap() {
   });
 
   return (
-    <div style={{ height: '50vh', width: '50vw', position: 'relative' }} >
+    <div style={{ height: '75vh', width: '100%', position: 'relative' }} >
       <DeckGL
         initialViewState={INITIAL_VIEW_STATE}
         controller={true}
