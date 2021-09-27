@@ -3,6 +3,7 @@ import React from 'react';
 import DeckGL from '@deck.gl/react';
 import { GeoJsonLayer } from '@deck.gl/layers';
 import { StaticMap } from 'react-map-gl';
+import { PathStyleExtension } from '@deck.gl/extensions';
 import perimetroRetrofitData from '../data/perimetros_retrofit.json';
 import edificacaoData from '../data/edificacao.json';
 
@@ -25,11 +26,15 @@ function MainMap() {
     pickable: true,
     stroked: true,
     filled: false,
-    getLineColor: [255, 0, 0],
+    getLineColor: [50, 100, 220],
     getPointRadius: 100,
     getLineWidth: 5,
     lineWidthScale: 1,
     lineWidthUnits: 'pixels',
+    getDashArray: [3, 2],
+    dashJustified: true,
+    dashGapPickable: true,
+    extensions: [new PathStyleExtension({ dash: true })],
   });
 
   const edificacoes = new GeoJsonLayer({
@@ -38,7 +43,7 @@ function MainMap() {
     pickable: false,
     filled: true,
     extruded: true,
-    getFillColor: [220, 200, 200],
+    getFillColor: [180, 200, 220],
     getPointRadius: 100,
     getLineWidth: 1,
     lineWidthScale: 1,
