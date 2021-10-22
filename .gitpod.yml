@@ -1,2 +1,0 @@
-tasks:
-  - init: npm install -g create-react-app eslint && cd retrofit-web && yarn install
